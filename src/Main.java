@@ -18,7 +18,6 @@ public class Main extends JFrame implements MouseListener {
     int x = 0;
     int y = 0;
     JLayeredPane lp;
-    int lay = 0;
 
     public Main () {
         super ("Кликер");
@@ -42,8 +41,7 @@ public class Main extends JFrame implements MouseListener {
         y=mouseEvent.getY() - 50;
         DrawClick d = new DrawClick();
         d.setBounds(x,y,50,50);
-        lp.add(d, lay);
-        lay++;
+        lp.add(d, JLayeredPane.PALETTE_LAYER);
     }
 
 
