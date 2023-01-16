@@ -37,11 +37,13 @@ public class Main extends JFrame implements MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
-        x=mouseEvent.getX() - 25;
-        y=mouseEvent.getY() - 50;
-        DrawClick d = new DrawClick();
-        d.setBounds(x,y,50,50);
-        lp.add(d, JLayeredPane.PALETTE_LAYER);
+        if (mouseEvent.getButton()==1) {  //левая кнопка мыши
+            x = mouseEvent.getX() - 25;
+            y = mouseEvent.getY() - 50;
+            DrawClick d = new DrawClick();
+            d.setBounds(x, y, 50, 50);
+            lp.add(d, JLayeredPane.PALETTE_LAYER);
+        }
     }
 
 
